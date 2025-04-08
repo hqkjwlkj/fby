@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地址发布页 - 收藏不迷路</title>
+    <meta name="keywords"
+          content="966资源网发布页,966资源网最新地址,966资源网址多少"/>
+    <meta name="description"
+          content="966资源网网址发布页,966资源最新地址,966资源网址多少"/>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: bgGradient 15s ease infinite alternate;
+            background-size: 400% 400%;
+        }
+
+        @keyframes bgGradient {
+            0% {
+                background: linear-gradient(135deg, #1e1e2f, #2a2a4a);
+            }
+            50% {
+                background: linear-gradient(135deg, #2a2a4a, #3b3b6a);
+            }
+            100% {
+                background: linear-gradient(135deg, #3b3b6a, #1e1e2f);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(90deg, #00ddeb, #ff6f91, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textGlow 3s ease infinite;
+        }
+
+        @keyframes textGlow {
+            0%, 100% { filter: drop-shadow(0 0 5px rgba(0, 221, 235, 0.5)); }
+            50% { filter: drop-shadow(0 0 10px rgba(255, 111, 145, 0.7)); }
+        }
+
+        .network-status {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.01); }
+        }
+
+        .network-status::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(30deg);
+            animation: sweep 4s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes sweep {
+            0% { transform: translateX(-100%) rotate(30deg); }
+            100% { transform: translateX(100%) rotate(30deg); }
+        }
+
+
+        .ping-value {
+            font-size: 1.4em;
+            font-weight: 600;
+            background: linear-gradient(90deg, #00ddeb, #ff6f91);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .status-good {
+            background: linear-gradient(45deg, rgba(46, 125, 50, 0.2), rgba(46, 125, 50, 0.1));
+            border-color: #2e7d32;
+        }
+
+        .status-medium {
+            background: linear-gradient(45deg, rgba(239, 108, 0, 0.2), rgba(239, 108, 0, 0.1));
+            border-color: #ef6c00;
+        }
+
+        .status-poor {
+            background: linear-gradient(45deg, rgba(198, 40, 40, 0.2), rgba(198, 40, 40, 0.1));
+            border-color: #c62828;
+        }
+
+        .content-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .content-section:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        a {
+            color: #00ddeb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 2px 4px;
+            border-radius: 6px;
+        }
+
+        a:hover {
+            color: #ffffff;
+            background-color: rgba(0, 221, 235, 0.2);
+            font-weight: 600;
+            border: 1px solid rgba(0, 221, 235, 0.3);
+        }
+
+        .enter-btn {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00ddeb, #ff6f91);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .enter-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 223, 100, 0.5);
+        }
+
+        .loading::after {
+            content: ' .';
+            animation: dots 1.5s infinite;
+            display: inline-block;
+            width: 1em;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: ' .'; }
+            40% { content: ' ..'; }
+            60% { content: ' ...'; }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px; }
+            .container { padding: 20px; }
+            h1 { font-size: 1.8em; }
+            .ping-value { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>地址发布页</h1>
+
+        <div class="network-status" id="networkStatus1">
+            <span>966资源网「<a href="https://www.966966.top" target="_blank">www.966966.top</a>」</span>
+            <span class="ping-value loading" id="pingValue1">检测中</span>
+            <button class="enter-btn" onclick="window.open('https://www.966966.top', '_blank')">进入</button>
+        </div>
+
+        <div class="network-status" id="networkStatus2">
+            <span>闪电云盘「<a href="https://pan.966966.top" target="_blank">pan.966966.top</a>」</span>
+            <span class="ping-value loading" id="pingValue2">检测中</span>
+            <button class="enter-btn" onclick="window.open('https://pan.966966.top', '_blank')">进入</button>
+        </div>
+
+        <div class="content-section">
+            <h2>导航中心</h2>
+            <p>请 Ctrl+D 收藏本页到浏览器收藏夹</p>
+        </div>
+        
+        <div class="content-section">
+    <h2>联系我们</h2>
+    <p>
+        反馈群：<a href="https://qm.qq.com/q/DzS8wAozUA" target="_blank">QQ群</a> | 
+        QQ频道：<a href="https://pd.qq.com/s/au9spnbl7" target="_blank">加入频道</a>
+    </p>
+</div>
+
+    </div>
+
+    <script>
+        function checkNetworkLatency(url, statusElementId, pingElementId) {
+            const startTime = performance.now();
+            const statusElement = document.getElementById(statusElementId);
+            const pingElement = document.getElementById(pingElementId);
+            pingElement.classList.remove('loading');
+
+            const img = new Image();
+            img.onload = img.onerror = () => {
+                const latency = Math.round(performance.now() - startTime);
+                pingElement.textContent = `${latency}ms`;
+                statusElement.classList.remove('status-good', 'status-medium', 'status-poor');
+                if (latency < 100) {
+                    statusElement.classList.add('status-good');
+                } else if (latency < 300) {
+                    statusElement.classList.add('status-medium');
+                } else {
+                    statusElement.classList.add('status-poor');
+                }
+            };
+            img.src = url + '?t=' + Date.now();
+        }
+
+        function checkAllLatencies() {
+            checkNetworkLatency('https://www.966966.top', 'networkStatus1', 'pingValue1');
+            checkNetworkLatency('https://pan.966966.top', 'networkStatus2', 'pingValue2');
+        }
+
+        window.addEventListener('load', () => {
+            checkAllLatencies();
+            setInterval(checkAllLatencies, 10000);
+        });
+
+        window.addEventListener('online', checkAllLatencies);
+
+        window.addEventListener('offline', () => {
+            const statusElements = [document.getElementById('networkStatus1'), document.getElementById('networkStatus2')];
+            const pingElements = [document.getElementById('pingValue1'), document.getElementById('pingValue2')];
+            statusElements.forEach((status, index) => {
+                pingElements[index].textContent = '离线';
+                pingElements[index].classList.remove('loading');
+                status.classList.remove('status-good', 'status-medium');
+                status.classList.add('status-poor');
+            });
+        });
+    </script>
+</body>
+</html>
