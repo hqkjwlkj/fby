@@ -210,12 +210,6 @@
         </div>
         
 
-        <div class="network-status" id="networkStatus2">
-            <span>闪电云盘「<a href="https://pan.556i.com" target="_blank">pan.556i.com</a>」</span>
-            <span class="ping-value loading" id="pingValue2">检测中</span>
-            <button class="enter-btn" onclick="window.open('https://pan.556i.com', '_blank')">进入</button>
-        </div>
-
         <div class="content-section">
             <h2>导航中心</h2>
             <p>请 Ctrl+D 收藏本页到浏览器收藏夹</p>
@@ -256,7 +250,6 @@
 
         function checkAllLatencies() {
             checkNetworkLatency('https://www.556i.com', 'networkStatus1', 'pingValue1');
-            checkNetworkLatency('https://pan.556i.com', 'networkStatus2', 'pingValue2');
         }
 
         window.addEventListener('load', () => {
